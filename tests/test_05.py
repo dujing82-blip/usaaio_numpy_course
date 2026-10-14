@@ -1,0 +1,6 @@
+import pytest
+from usaaio_check.exercise_tests import evaluate
+
+@pytest.mark.parametrize("id", ['5.1', '5.2', '5.3', '5.4', '5.5', '5.6', '5.7', '5.8', '5.9', '5.10', '5.11', '5.12', '5.13'])
+def test_exercise(id,solution_namespaces):
+    assert evaluate(solution_namespaces[id],id)

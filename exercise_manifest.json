@@ -1,0 +1,994 @@
+{
+  "1.1": {
+    "title": "Describe an array",
+    "targets": [
+      "describe"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.2": {
+    "title": "Build by recipe",
+    "targets": [
+      "build"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.3": {
+    "title": "Seeded normals (2026 Sample P4.1)",
+    "targets": [
+      "seeded"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.4": {
+    "title": "Three looks of the same numbers",
+    "targets": [
+      "three_looks"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.5": {
+    "title": "Row, column, block",
+    "targets": [
+      "pick"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.6": {
+    "title": "Mask assignment",
+    "targets": [
+      "cap"
+    ],
+    "cases": 2,
+    "rules": {
+      "cap": {
+        "no_loops": true
+      }
+    }
+  },
+  "1.7": {
+    "title": "Random split (2025 R1 P3.8 / 2026 Sample P9.14)",
+    "targets": [
+      "split_indices"
+    ],
+    "cases": 2,
+    "rules": {
+      "split_indices": {
+        "require_seed_reset": true
+      }
+    }
+  },
+  "1.8": {
+    "title": "Reshape family",
+    "targets": [
+      "regroup"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.9": {
+    "title": "squeeze / expand_dims / swapaxes (2026 Sample P4.2\u20134.4)",
+    "targets": [
+      "shape_walk"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.10": {
+    "title": "reshape vs transpose",
+    "targets": [
+      "which_moved"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.11": {
+    "title": "HWC \u2192 CHW",
+    "targets": [
+      "to_chw"
+    ],
+    "cases": 2,
+    "rules": {
+      "to_chw": {
+        "no_loops": true
+      }
+    }
+  },
+  "1.12": {
+    "title": "stack vs concatenate",
+    "targets": [
+      "join"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "1.13": {
+    "title": "Bias column (2025 R1 P3.9)",
+    "targets": [
+      "add_ones"
+    ],
+    "cases": 2,
+    "rules": {
+      "add_ones": {
+        "no_loops": true
+      }
+    }
+  },
+  "1.14": {
+    "title": "Repeat copies (2025 R2 P2.10)",
+    "targets": [
+      "tile_rows"
+    ],
+    "cases": 2,
+    "rules": {
+      "tile_rows": {
+        "no_loops": true
+      }
+    }
+  },
+  "1.15": {
+    "title": "PINN grids (2025 R2 P1.6\u20131.7, P1.12), NumPy version",
+    "targets": [
+      "ic_points",
+      "bc_points",
+      "grid_points"
+    ],
+    "cases": 6,
+    "rules": {
+      "ic_points": {
+        "no_loops": true
+      },
+      "bc_points": {
+        "no_loops": true
+      },
+      "grid_points": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.1": {
+    "title": "Activations in one line (2025 R1 P2.10, P3.16)",
+    "targets": [
+      "sigmoid",
+      "relu",
+      "tanh_"
+    ],
+    "cases": 6,
+    "rules": {
+      "sigmoid": {
+        "no_loops": true
+      },
+      "relu": {
+        "no_loops": true
+      },
+      "tanh_": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.2": {
+    "title": "Stable softmax along the last axis",
+    "targets": [
+      "softmax"
+    ],
+    "cases": 2,
+    "rules": {
+      "softmax": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.3": {
+    "title": "Broadcast or error?",
+    "targets": [
+      "broadcast_result"
+    ],
+    "cases": 7,
+    "rules": {
+      "broadcast_result": {
+        "no_numpy": true
+      }
+    }
+  },
+  "2.4": {
+    "title": "All pairs (2026 Sample P5.5)",
+    "targets": [
+      "kernel_matrix"
+    ],
+    "cases": 2,
+    "rules": {
+      "kernel_matrix": {
+        "no_loops": true,
+        "no_linalg": true
+      }
+    }
+  },
+  "2.5": {
+    "title": "Column-wise and row-wise sums",
+    "targets": [
+      "sums"
+    ],
+    "cases": 2,
+    "rules": {
+      "sums": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.6": {
+    "title": "Min\u2013max scaling per column from scratch (2026 Sample P9.8)",
+    "targets": [
+      "minmax"
+    ],
+    "cases": 2,
+    "rules": {
+      "minmax": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.7": {
+    "title": "Standardize per column (what `StandardScaler` does)",
+    "targets": [
+      "standardize"
+    ],
+    "cases": 2,
+    "rules": {
+      "standardize": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.8": {
+    "title": "Unit rows without np.linalg (2026 R1 P5.4)",
+    "targets": [
+      "unit_rows"
+    ],
+    "cases": 2,
+    "rules": {
+      "unit_rows": {
+        "no_loops": true,
+        "no_linalg": true
+      }
+    }
+  },
+  "2.9": {
+    "title": "Accuracy and threshold (2025 R1 P3.17)",
+    "targets": [
+      "predict",
+      "accuracy"
+    ],
+    "cases": 4,
+    "rules": {
+      "predict": {
+        "no_loops": true
+      },
+      "accuracy": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.10": {
+    "title": "Counting with masks (2026 Sample P9.7, P9.11)",
+    "targets": [
+      "count_unknown",
+      "odd_married_counts"
+    ],
+    "cases": 4,
+    "rules": {}
+  },
+  "2.11": {
+    "title": "One-hot from scratch (2026 Sample P9.9)",
+    "targets": [
+      "one_hot"
+    ],
+    "cases": 2,
+    "rules": {
+      "one_hot": {
+        "no_loops": true
+      }
+    }
+  },
+  "2.12": {
+    "title": "Affine over the last axis by broadcasting (2025 R1 P2.3)",
+    "targets": [
+      "affine_bc"
+    ],
+    "cases": 4,
+    "rules": {
+      "affine_bc": {
+        "no_loops": true,
+        "no_matmul": true
+      }
+    }
+  },
+  "3.1": {
+    "title": "Dot three ways",
+    "targets": [
+      "dot3"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "3.2": {
+    "title": "Cosine similarity of two vectors",
+    "targets": [
+      "cosine"
+    ],
+    "cases": 2,
+    "rules": {
+      "cosine": {
+        "no_linalg": true
+      }
+    }
+  },
+  "3.3": {
+    "title": "Matrix \u00d7 vector by hand then code (2025 R1 P2.1)",
+    "targets": [
+      "affine"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "3.4": {
+    "title": "Shape rule quiz",
+    "targets": [
+      "matmul_shape"
+    ],
+    "cases": 3,
+    "rules": {}
+  },
+  "3.5": {
+    "title": "`*` is not `@`",
+    "targets": [
+      "both"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "3.6": {
+    "title": "Gram matrices",
+    "targets": [
+      "grams"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "3.7": {
+    "title": "Weighted sum of rows",
+    "targets": [
+      "weighted_rows",
+      "weighted_rows_pure"
+    ],
+    "cases": 4,
+    "rules": {
+      "weighted_rows_pure": {
+        "no_loops": true,
+        "no_linalg": true,
+        "no_matmul": true,
+        "no_transpose": true
+      }
+    }
+  },
+  "3.8": {
+    "title": "**MSE gradient, pure (2026 R1 P4.2)**",
+    "targets": [
+      "my_fun_derivative"
+    ],
+    "cases": 2,
+    "rules": {
+      "my_fun_derivative": {
+        "no_loops": true,
+        "no_linalg": true,
+        "no_matmul": true,
+        "no_transpose": true
+      }
+    }
+  },
+  "3.9": {
+    "title": "Similarity matrix, pure (2026 R1 P5.6\u20135.8)",
+    "targets": [
+      "sim_matrix"
+    ],
+    "cases": 2,
+    "rules": {
+      "sim_matrix": {
+        "no_loops": true,
+        "no_linalg": true,
+        "no_matmul": true,
+        "no_transpose": true
+      }
+    }
+  },
+  "3.10": {
+    "title": "Batched matmul shapes",
+    "targets": [
+      "attn_scores"
+    ],
+    "cases": 2,
+    "rules": {
+      "attn_scores": {
+        "no_loops": true
+      }
+    }
+  },
+  "3.11": {
+    "title": "Permutation matrix (2026 Sample P2)",
+    "targets": [
+      "perm_matrix"
+    ],
+    "cases": 2,
+    "rules": {
+      "perm_matrix": {
+        "no_loops": true
+      }
+    }
+  },
+  "3.12": {
+    "title": "Outer product and rank-1 sum (2026 R1 P3.2)",
+    "targets": [
+      "outer_sum"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "3.13": {
+    "title": "diag both ways, trace, fill_diagonal",
+    "targets": [
+      "diag_tools",
+      "kill_diag"
+    ],
+    "cases": 4,
+    "rules": {}
+  },
+  "4.1": {
+    "title": "Unit vector, projection, residual (2026 Sample P1)",
+    "targets": [
+      "project"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "4.2": {
+    "title": "Midpoint hyperplane (2026 Sample P7.3)",
+    "targets": [
+      "hyperplane"
+    ],
+    "cases": 3,
+    "rules": {}
+  },
+  "4.3": {
+    "title": "Solve vs inverse (2024 IAIO Q6.3)",
+    "targets": [
+      "solve_system"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "4.4": {
+    "title": "2\u00d72 eigenvalues by hand (2025 R1 P1.5)",
+    "targets": [
+      "eig2"
+    ],
+    "cases": 2,
+    "rules": {
+      "eig2": {
+        "no_linalg": true
+      }
+    }
+  },
+  "4.5": {
+    "title": "Spectral decomposition and matrix powers (2025 R1 P1.6\u20131.9)",
+    "targets": [
+      "My_Fib.compute_fib"
+    ],
+    "cases": 2,
+    "rules": {
+      "My_Fib.compute_fib": {
+        "no_loops": true
+      }
+    }
+  },
+  "4.6": {
+    "title": "eigh round trip",
+    "targets": [
+      "spectral"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "4.7": {
+    "title": "SVD shapes and the Vt trap (2026 R1 P5.11)",
+    "targets": [
+      "svd_parts"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "4.8": {
+    "title": "Spectral decomposition of S from the SVD of W (2026 R1 P5.12\u20135.13)",
+    "targets": [
+      "spectral_from_svd",
+      "fro_sq"
+    ],
+    "cases": 4,
+    "rules": {}
+  },
+  "4.9": {
+    "title": "Low-rank approximation and the error curve (2026 R1 P5.14\u20135.15)",
+    "targets": [
+      "lowrank_error",
+      "error_curve"
+    ],
+    "cases": 4,
+    "rules": {
+      "lowrank_error": {
+        "no_loops": true
+      }
+    }
+  },
+  "4.10": {
+    "title": "GQA \u2192 MLA factorization (2025 R2 P2.10)",
+    "targets": [
+      "GQA_2_MLA"
+    ],
+    "cases": 2,
+    "rules": {
+      "GQA_2_MLA": {
+        "no_loops": true
+      }
+    }
+  },
+  "4.11": {
+    "title": "Rank and determinant facts (2026 Sample P5.3\u20135.4)",
+    "targets": [
+      "kernel_rank"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "4.12": {
+    "title": "Pairwise distances two ways (2024 IAIO Q3, 2026 R1 P9)",
+    "targets": [
+      "pairwise_sq_dist",
+      "kmeans_assign",
+      "kmeans_update"
+    ],
+    "cases": 6,
+    "rules": {
+      "pairwise_sq_dist": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.1": {
+    "title": "`My_Linear_NumPy` (2025 R1 P2.3\u20132.4)",
+    "targets": [
+      "My_Linear_NumPy.forward"
+    ],
+    "cases": 4,
+    "rules": {
+      "My_Linear_NumPy.forward": {
+        "no_loops": true
+      },
+      "My_Linear_NumPy.__init__": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.2": {
+    "title": "Parameter counting (2025 R1 P2.6, 2024 IAIO Q4, 2026 Sample P12.3)",
+    "targets": [
+      "n_params_linear",
+      "n_params_mlp",
+      "n_params_conv",
+      "n_params_ffn"
+    ],
+    "cases": 8,
+    "rules": {}
+  },
+  "5.3": {
+    "title": "Tied-weight symmetric model (2025 R1 P2.7\u20132.9)",
+    "targets": [
+      "symmetric_forward"
+    ],
+    "cases": 2,
+    "rules": {
+      "symmetric_forward": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.4": {
+    "title": "Gradient descent for linear regression (E2)",
+    "targets": [
+      "fit_gd"
+    ],
+    "cases": 2,
+    "rules": {
+      "fit_gd": {
+        "max_loops": 1
+      }
+    }
+  },
+  "5.5": {
+    "title": "`My_Log_Reg` (2025 R1 P3.16\u20133.18)",
+    "targets": [
+      "my_sigmoid",
+      "My_Log_Reg.fit"
+    ],
+    "cases": 4,
+    "rules": {
+      "My_Log_Reg.fit": {
+        "max_loops": 1
+      },
+      "My_Log_Reg.predict": {
+        "no_loops": true
+      },
+      "My_Log_Reg.score": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.6": {
+    "title": "Attention in NumPy (2025 R2 P2.5)",
+    "targets": [
+      "mha_numpy"
+    ],
+    "cases": 2,
+    "rules": {
+      "mha_numpy": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.7": {
+    "title": "GQA by broadcasting (2025 R2 P2.7)",
+    "targets": [
+      "gqa_numpy"
+    ],
+    "cases": 2,
+    "rules": {
+      "gqa_numpy": {
+        "no_loops": true,
+        "no_kv_copies": true
+      }
+    }
+  },
+  "5.8": {
+    "title": "Nearest-token dictionary (2026 R1 P5.9)",
+    "targets": [
+      "nearest_dict"
+    ],
+    "cases": 2,
+    "rules": {
+      "nearest_dict": {
+        "final_dict_only": true
+      }
+    }
+  },
+  "5.9": {
+    "title": "Embedding compression end to end (2026 R1 P5, condensed)",
+    "targets": [
+      "compress_embeddings"
+    ],
+    "cases": 2,
+    "rules": {
+      "compress_embeddings": {
+        "no_loops": true,
+        "no_matmul": true
+      }
+    }
+  },
+  "5.10": {
+    "title": "Image batch (2025 R2 P3.4)",
+    "targets": [
+      "to_batch"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "5.11": {
+    "title": "Triangle classifier with threshold units (2026 Sample P11 / 2026 R1 P7.4)",
+    "targets": [
+      "inside_triangle"
+    ],
+    "cases": 3,
+    "rules": {
+      "inside_triangle": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.12": {
+    "title": "Softmax temperature (2025 R2 P3.20)",
+    "targets": [
+      "softmax_T"
+    ],
+    "cases": 2,
+    "rules": {
+      "softmax_T": {
+        "no_loops": true
+      }
+    }
+  },
+  "5.13": {
+    "title": "CLIP-style contrastive loss in NumPy (2025 R2 P3.15)",
+    "targets": [
+      "clip_loss"
+    ],
+    "cases": 2,
+    "rules": {
+      "clip_loss": {
+        "no_loops": true
+      }
+    }
+  },
+  "7.1": {
+    "title": "NumPy \u2194 torch vocabulary",
+    "targets": [
+      "torch_regroup",
+      "torch_shape_walk",
+      "torch_join",
+      "torch_unit_rows",
+      "torch_sim_matrix",
+      "torch_to_chw"
+    ],
+    "cases": 12,
+    "rules": {
+      "torch_regroup": {
+        "no_loops": true
+      },
+      "torch_shape_walk": {
+        "no_loops": true
+      },
+      "torch_join": {
+        "no_loops": true
+      },
+      "torch_unit_rows": {
+        "no_loops": true
+      },
+      "torch_sim_matrix": {
+        "no_loops": true
+      },
+      "torch_to_chw": {
+        "no_loops": true
+      }
+    }
+  },
+  "7.2": {
+    "title": "`My_ReLU`, `My_Threshold`, `My_Linear` as `nn.Module` (2025 R1 P2.10, 2026 R1 P7.1\u20137.3)",
+    "targets": [
+      "My_ReLU.forward",
+      "My_Threshold.forward",
+      "My_Linear.forward"
+    ],
+    "cases": 6,
+    "rules": {
+      "My_ReLU.forward": {
+        "no_loops": true
+      },
+      "My_Threshold.forward": {
+        "no_loops": true
+      },
+      "My_Linear.forward": {
+        "no_loops": true
+      }
+    }
+  },
+  "7.3": {
+    "title": "`My_MLP_Model` with `nn.Sequential` + training loop on `y = sin(2\u03c0x) + noise` (2025 R1 P2.11\u20132.13)",
+    "targets": [
+      "train_mlp"
+    ],
+    "cases": 2,
+    "rules": {
+      "train_mlp": {
+        "max_loops": 1
+      },
+      "My_MLP_Model.forward": {
+        "no_loops": true
+      }
+    }
+  },
+  "7.4": {
+    "title": "`autograd.grad` drills (2025 R2 P1.9)",
+    "targets": [
+      "scalar_derivatives",
+      "vector_derivatives"
+    ],
+    "cases": 4,
+    "rules": {}
+  },
+  "7.5": {
+    "title": "`MyMHA` as `nn.Module` (2025 R2 P2.5) and equality test against 5.6 with copied weights (`nn.Parameter`)",
+    "targets": [
+      "MyMHA.forward"
+    ],
+    "cases": 2,
+    "rules": {
+      "MyMHA.forward": {
+        "no_loops": true
+      }
+    }
+  },
+  "7.6": {
+    "title": "`Dataset`, `DataLoader`, `collate_fn` with padding and attention masks (2025 R2 P1.4\u20131.5, P3.8\u20133.9)",
+    "targets": [
+      "collate_fn"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "A.1": {
+    "title": "squeeze / expand_dims / swapaxes (2026 Sample P4.2\u20134.4)",
+    "targets": [
+      "shape_walk"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "A.2": {
+    "title": "All pairs (2026 Sample P5.5)",
+    "targets": [
+      "kernel_matrix"
+    ],
+    "cases": 2,
+    "rules": {
+      "kernel_matrix": {
+        "no_loops": true,
+        "no_linalg": true
+      }
+    }
+  },
+  "A.3": {
+    "title": "Midpoint hyperplane (2026 Sample P7.3)",
+    "targets": [
+      "hyperplane"
+    ],
+    "cases": 3,
+    "rules": {}
+  },
+  "A.4": {
+    "title": "**MSE gradient, pure (2026 R1 P4.2)**",
+    "targets": [
+      "my_fun_derivative"
+    ],
+    "cases": 2,
+    "rules": {
+      "my_fun_derivative": {
+        "no_loops": true,
+        "no_linalg": true,
+        "no_matmul": true,
+        "no_transpose": true
+      }
+    }
+  },
+  "A.5": {
+    "title": "Embedding analysis",
+    "targets": [
+      "vectors_array",
+      "unit_rows",
+      "similarity_range",
+      "sim_matrix",
+      "diagonal_of_similarity",
+      "nearest_dict",
+      "svd_parts",
+      "spectral_from_svd",
+      "fro_sq",
+      "lowrank_factor",
+      "error_curve"
+    ],
+    "cases": 22,
+    "rules": {
+      "unit_rows": {
+        "no_loops": true,
+        "no_linalg": true
+      },
+      "sim_matrix": {
+        "no_loops": true,
+        "no_linalg": true,
+        "no_matmul": true,
+        "no_transpose": true
+      },
+      "nearest_dict": {
+        "final_dict_only": true
+      }
+    }
+  },
+  "A.6": {
+    "title": "Outer product and rank-1 sum (2026 R1 P3.2)",
+    "targets": [
+      "outer_sum"
+    ],
+    "cases": 2,
+    "rules": {}
+  },
+  "B.1": {
+    "title": "Spectral decomposition and matrix powers (2025 R1 P1.6\u20131.9)",
+    "targets": [
+      "My_Fib.compute_fib"
+    ],
+    "cases": 2,
+    "rules": {
+      "My_Fib.compute_fib": {
+        "no_loops": true
+      }
+    }
+  },
+  "B.2": {
+    "title": "`My_Linear_NumPy` (2025 R1 P2.3\u20132.4)",
+    "targets": [
+      "My_Linear_NumPy.forward"
+    ],
+    "cases": 4,
+    "rules": {
+      "My_Linear_NumPy.forward": {
+        "no_loops": true
+      },
+      "My_Linear_NumPy.__init__": {
+        "no_loops": true
+      }
+    }
+  },
+  "B.3": {
+    "title": "`My_MLP_Model` with `nn.Sequential` + training loop on `y = sin(2\u03c0x) + noise` (2025 R1 P2.11\u20132.13)",
+    "targets": [
+      "My_ReLU.forward",
+      "My_MLP_Model.forward"
+    ],
+    "cases": 4,
+    "rules": {
+      "My_ReLU.forward": {
+        "no_loops": true
+      },
+      "My_MLP_Model.forward": {
+        "no_loops": true
+      }
+    }
+  },
+  "B.4": {
+    "title": "`My_Log_Reg` (2025 R1 P3.16\u20133.18)",
+    "targets": [
+      "prepare_titanic",
+      "My_Log_Reg.fit"
+    ],
+    "cases": 4,
+    "rules": {
+      "My_Log_Reg.fit": {
+        "max_loops": 1
+      },
+      "My_Log_Reg.predict": {
+        "no_loops": true
+      },
+      "My_Log_Reg.score": {
+        "no_loops": true
+      },
+      "prepare_titanic": {
+        "require_seed_reset": true
+      }
+    }
+  },
+  "B.5": {
+    "title": "`MyMHA` as `nn.Module` (2025 R2 P2.5) and equality test against 5.6 with copied weights (`nn.Parameter`)",
+    "targets": [
+      "MyMHA.forward",
+      "MyGQA.forward"
+    ],
+    "cases": 4,
+    "rules": {
+      "MyMHA.forward": {
+        "no_loops": true
+      },
+      "MyGQA.forward": {
+        "no_loops": true,
+        "no_kv_copies": true
+      }
+    }
+  }
+}
